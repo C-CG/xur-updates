@@ -48,9 +48,19 @@ class xurUpdates extends React.Component {
       if(obj[i].hash == props.item) {
         console.log("ITEM FOUND: " + obj[i].displayProperties.name)
         return(
-          <div>
-            <p>{obj[i].displayProperties.name}</p>
-            <img src={"https://www.bungie.net" + obj[i].displayProperties.icon}/>
+          <div className="row">
+            <div className="row__icon">
+              <img src={"https://www.bungie.net" + obj[i].displayProperties.icon}/>
+            </div>
+            <div className="row__desc">
+              <div style={{paddingTop: "7px", borderBottom: "3px solid white"}}>
+                <p className="row__desc__title">{obj[i].displayProperties.name}</p>    
+                <p className="row__desc__desc">{obj[i].displayProperties.description}</p>
+              </div>
+              <div>
+                <p>Cost: {props.cost}</p>
+              </div>            
+            </div>           
           </div>
         )    
       }
@@ -61,7 +71,7 @@ class xurUpdates extends React.Component {
   render() {
     const {loaded, exotics, consumables, error} = this.state;
     const array = Object.values(exotics);
-
+    const cost = 0;
     if (error) {
       return ( <div>
         <p>{error.message}</p>
@@ -79,10 +89,10 @@ class xurUpdates extends React.Component {
     else {
       return(
         <div className="container">
-          <ul>
+          <ul style={{listStyle: "none"}}>
             {array.map(item => (
-              <li key={item.key}>
-                <this.returnItems item={item.itemHash}/>
+              <li key={item.key} onClick={() => console.log(Object.values(item.costs[0])[1])}>
+                <this.returnItems item={item.itemHash} cost={"NA"}/>
               </li>
             ))
             }

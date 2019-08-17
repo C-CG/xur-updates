@@ -23,6 +23,42 @@
   transform: translate(-50%, -50%);
 }
 
+.row {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  width: 300px;
+  height: 110px;
+  background: #090D11;
+  margin-bottom: 10px;
+}
+p { margin: 0 !important; }
+
+.row__desc__title {
+  color: white;
+  font-size: 12pt;
+}
+
+.row__desc {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+.row__desc__desc {
+  width: 175px;
+  color: #848688;
+  font-size: 8pt;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.row__icon {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 7px;
+}
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
