@@ -68,6 +68,16 @@ class xurUpdates extends React.Component {
     return(<div>NOT FOUND</div>)
   }
 
+  getCost(cost) {
+    var t = (cost).length
+    if (t == 0) {
+      return 0
+    }
+    else {
+      return (Object.values(cost[0])[1])
+    }
+  }
+
   render() {
     const {loaded, exotics, consumables, error} = this.state;
     const array = Object.values(exotics);
@@ -92,7 +102,7 @@ class xurUpdates extends React.Component {
           <ul style={{listStyle: "none"}}>
             {array.map(item => (
               <li key={item.key} onClick={() => console.log(Object.values(item.costs[0])[1])}>
-                <this.returnItems item={item.itemHash} cost={"NA"}/>
+                <this.returnItems item={item.itemHash} cost={this.getCost(Object.values(item.costs))}/>
               </li>
             ))
             }
