@@ -48,20 +48,23 @@ class xurUpdates extends React.Component {
       if(obj[i].hash == props.item) {
         console.log("ITEM FOUND: " + obj[i].displayProperties.name)
         return(
-          <div className="row">
-            <div className="row__icon">
-              <img src={"https://www.bungie.net" + obj[i].displayProperties.icon}/>
+          <div className="card">
+            <div className="card__icon">
+              <img src={"https://www.bungie.net" + obj[i].displayProperties.icon} alt="item-img"/>
             </div>
-            <div className="row__desc">
-              <div style={{paddingTop: "7px", borderBottom: "3px solid white"}}>
-                <p className="row__desc__title">{obj[i].displayProperties.name}</p>    
-                <p className="row__desc__desc">{obj[i].displayProperties.description}</p>
+            <div className="card__desc">
+              <div>
+                <p className="card__desc__title">{obj[i].displayProperties.name}</p>
+                <p className="card__desc__type">TYPE</p>
+                <div className="card__desc__price">
+                  ?/{props.cost}
+                </div>
               </div>
               <div>
-                <p>Cost: {props.cost}</p>
-              </div>            
-            </div>           
-          </div>
+                {obj[i].displayProperties.description}
+              </div>
+            </div>
+        </div>
         )    
       }
     }
@@ -79,9 +82,9 @@ class xurUpdates extends React.Component {
   }
 
   render() {
-    const {loaded, exotics, consumables, error} = this.state;
+    const {loaded, exotics, error} = this.state;
     const array = Object.values(exotics);
-    const cost = 0;
+
     if (error) {
       return ( <div>
         <p>{error.message}</p>
@@ -106,7 +109,7 @@ class xurUpdates extends React.Component {
               </li>
             ))
             }
-          </ul>      
+          </ul>     
         </div>
         )
     } 

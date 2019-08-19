@@ -23,42 +23,8 @@
   transform: translate(-50%, -50%);
 }
 
-.row {
-  position: relative;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  width: 300px;
-  height: 110px;
-  background: #090D11;
-  margin-bottom: 10px;
-}
 p { margin: 0 !important; }
 
-.row__desc__title {
-  color: white;
-  font-size: 12pt;
-}
-
-.row__desc {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-}
-
-.row__desc__desc {
-  width: 175px;
-  color: #848688;
-  font-size: 8pt;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.row__icon {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  padding: 7px;
-}
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -71,3 +37,66 @@ p { margin: 0 !important; }
   object-fit: contain;
   animation: fadeIn 2s;
 }
+
+/* Card 2.0 */
+.card {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  width: 300px;
+  height: 110px;
+  background: #090D11;
+  margin-bottom: 10px;
+}
+
+.card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 110px;
+  width: 110px;
+}
+
+.card__desc {
+  display: grid;
+  grid-auto-rows: 45px 1fr;
+}
+
+.card__desc div:nth-child(1) {
+  position: relative;
+  padding-left: 7px;
+  padding-top: 7px;
+  
+}
+.card__desc div:nth-child(2) {
+  padding-top: 7px;
+  padding-left: 7px;
+  padding-right: 7px;
+  margin-bottom: 7px;
+  color: white;
+  font-size: 8pt;
+  word-wrap: break-word;
+  text-overflow: ellipsis;
+}
+
+.card__desc__title {
+  color: white;
+  font-size: 12pt;
+}
+
+.card__desc__type {
+  color: #868686;
+  font-size: 8pt;
+  font-style: italic;
+  border-bottom: 3px solid white;
+}
+
+.card__desc__price {
+  position: absolute;
+  top: 7px;
+  right: 14px;
+  width: 20px;
+  height: 20px;  
+}
+
+
