@@ -69,14 +69,14 @@ p { margin: 0 !important; }
   
 }
 .card__desc div:nth-child(2) {
+  height: auto;
+  max-height: 49px;
   padding-top: 7px;
   padding-left: 7px;
   padding-right: 7px;
   margin-bottom: 7px;
   color: white;
   font-size: 8pt;
-  word-wrap: break-word;
-  text-overflow: ellipsis;
   overflow: hidden;
 }
 
@@ -109,5 +109,6 @@ p { margin: 0 !important; }
   height: 15px;
   margin-right: 5px; 
 }
+
 
 

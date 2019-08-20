@@ -11,8 +11,6 @@ class xurUpdates extends React.Component {
     super();
     this.state = {
       itemsForSale: [],
-      exotics: [],
-      consumables: [],
       loaded: false,
       error: null,
     };
@@ -47,7 +45,7 @@ class xurUpdates extends React.Component {
     // Importing the values from the Bungie Manifest
     var obj = Object.values(items); 
     for (var i = 0; i < obj.length; i++) {
-      if(obj[i].hash == props.item) {
+      if(obj[i].hash === props.item) {
         return(
           <div className="card">
             <div className="card__icon">
@@ -75,7 +73,7 @@ class xurUpdates extends React.Component {
 
   getCost(cost) {
     var t = (cost).length
-    if (t == 0) {
+    if (t === 0) {
       return 0
     }
     else {
@@ -108,7 +106,7 @@ class xurUpdates extends React.Component {
         <div className="container">
           <ul style={{listStyle: "none"}}>
             {array.map(item => (
-              <li key={item.key} onClick={() => console.log(Object.values(item.costs[0])[1])}>
+              <li key={item.itemHash} onClick={() => console.log(Object.values(item.costs[0])[1])}>
                 <this.returnItems item={item.itemHash} cost={this.getCost(Object.values(item.costs))}/>
               </li>
             ))
