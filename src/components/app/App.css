@@ -77,6 +77,7 @@ p { margin: 0 !important; }
   font-size: 8pt;
   word-wrap: break-word;
   text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .card__desc__title {
@@ -88,15 +89,25 @@ p { margin: 0 !important; }
   color: #868686;
   font-size: 8pt;
   font-style: italic;
+  padding-bottom: 1px;
   border-bottom: 3px solid white;
 }
 
 .card__desc__price {
+  display: flex;
+  align-items: center;
   position: absolute;
   top: 7px;
   right: 14px;
-  width: 20px;
+  width: auto;
   height: 20px;  
+  text-align: start;
+}
+
+.card__desc__price img {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px; 
 }
 
 
